@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mariella Pugens — Desenvolvedor Full Stack</title>
+    <meta
+      name="description"
+      content="Portfólio de Rafael Duarte, desenvolvedor full stack: projetos, dados profissionais e currículo em PDF."
+    />
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="logo">mariella.dev</span>
+      <nav>
+        <a href="#projetos">Projetos</a>
+        <a href="#curriculo">Currículo</a>
+        <a href="mailto:oi@rafael.dev">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Full Stack Developer · São Paulo</p>
+        <h1>Mariella Pugens<span>construindo a web rápida</span></h1>
+        <p class="lead">
+          8 anos transformando produtos complexos em interfaces simples. Foco em
+          performance, acessibilidade e sistemas de design que escalam.
+        </p>
+        <a class="btn" href="mailto:oi@rafael.dev">Vamos conversar →</a>
+      </section>
+
+      <section class="stats">
+        <div class="card"><strong>8+</strong><span>anos de experiência</span></div>
+        <div class="card"><strong>37</strong><span>produtos entregues</span></div>
+        <div class="card"><strong>3.2k</strong><span>estrelas no GitHub</span></div>
+      </section>
+
+      <section id="curriculo" class="card cv">
+        <div>
+          <h2>Currículo</h2>
+          <p class="lead">Resumo profissional em uma página, pronto para enviar ao recrutamento.</p>
+          <a class="btn" href="/curriculo-rafael-duarte.pdf" download>⬇ Baixar currículo (PDF)</a>
+          <p class="tiny">PDF · 1 página · atualizado em agosto de 2026</p>
+        </div>
+        <ul class="facts" id="facts"></ul>
+      </section>
+
+      <section id="projetos" class="card">
+        <h2>Projetos selecionados</h2>
+        <ul class="projects" id="projects"> <script type="module" src="js/main.js">renderProjects();</script></ul>
+      </section>
+
+      <section class="card">
+        <h2>Stack</h2>
+        <ul class="tags" id="stack"></ul>
+      </section>
+
+      <section class="card cta">
+        <h2>Disponível para freelas a partir de setembro.</h2>
+        <a href="mailto:oi@rafael.dev">oi@rafael.dev →</a>
+      </section>
+    </main>
+
+    <footer>© 2026 Rafael Duarte</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
