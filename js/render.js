@@ -1,7 +1,8 @@
 import {
   facts,
   projects,
-  stack
+  stack, 
+  certifications
 } from "./data.js";
 
 export function renderFacts() {
@@ -25,23 +26,14 @@ export function renderProjects() {
     document.getElementById("projects");
 
   element.innerHTML = projects
-    .map(project => `
-      <li>
-
-        <div class="row">
-          <h3>${project.name}</h3>
-          <span>${project.year}</span>
-        </div>
-
-        <p>${project.desc}</p>
-
-        <small>
-          ${project.stack.join(" · ")}
-        </small>
-
-      </li>
-    `)
-    .join("");
+     .map(
+    (p) => `<li>
+      <div class="row"><h3>${p.name}</h3><span class="year">${p.year}</span></div>
+      <p>${p.desc}</p>
+      <span class="tech">${p.stack.join(" · ")}</span>
+    </li>`,
+  )
+  .join("");
 }
 
 export function renderStack() {
@@ -51,5 +43,22 @@ export function renderStack() {
 
   element.innerHTML = stack
     .map(item => `<li>${item}</li>`)
+    .join("");
+}
+
+export function renderCertifications() {
+    
+  const element =
+    document.getElementById("certifications");
+
+  element.innerHTML = certifications
+    .map((certification) => `<li>
+        <div class="certification-mark">✦</div>
+       <div>
+         <h3>${certification.name}</h3>
+         <p>${certification.issuer}</p>
+        </div>
+        <span class="year">${certification.year}</span>
+      </li>`,)
     .join("");
 }

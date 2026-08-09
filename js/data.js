@@ -1,7 +1,7 @@
 export const facts = [
   {
     label: "Local",
-    value: "São Paulo · remoto"
+    value: "Porto Alegre - RS"
   },
   {
     label: "Formação",
@@ -41,4 +41,10 @@ export const stack = [
   "Node.js",
   "Docker",
   "AWS"
+];
+
+export const certifications = [
+  { name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", year: "2025" },
+  { name: "Professional Scrum Master I", issuer: "Scrum.org", year: "2024" },
+  { name: "Desenvolvimento Web Full Stack", issuer: "Rocketseat", year: "2023" },
 ];

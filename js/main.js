@@ -1,7 +1,8 @@
 import {
   renderFacts,
   renderProjects,
-  renderStack
+  renderStack,
+  renderCertifications
 } from "./render.js";
 
 import {
@@ -15,8 +16,8 @@ document.addEventListener(
     renderFacts();
     renderProjects();
     renderStack();
-
     initNavigation();
+    renderCertifications();
 
   }
 );
