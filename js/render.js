@@ -1,6 +1,6 @@
 import {
   facts,
-  projects,
+  challanges,
   stack, 
   certifications
 } from "./data.js";
@@ -20,15 +20,15 @@ export function renderFacts() {
     .join("");
 }
 
-export function renderProjects() {
+export function renderChallenges() {
 
   const element =
-    document.getElementById("projects");
+    document.getElementById("challenges");
 
-  element.innerHTML = projects
+  element.innerHTML = challanges
      .map(
     (p) => `<li>
-      <div class="row"><h3>${p.name}</h3><span class="year">${p.year}</span></div>
+      <div class="row"><h3>${p.challange}</h3></div>
       <p>${p.desc}</p>
       <span class="tech">${p.stack.join(" · ")}</span>
     </li>`,
@@ -53,12 +53,14 @@ export function renderCertifications() {
 
   element.innerHTML = certifications
     .map((certification) => `<li>
+  <a class="certification-link" href="${certification.url}" target="_blank" rel="noopener noreferrer" aria-label="Abrir certificação: ${certification.name}">
         <div class="certification-mark">✦</div>
-       <div>
-         <h3>${certification.name}</h3>
-         <p>${certification.issuer}</p>
+        <div>
+          <h3>${certification.name}</h3>
+          <p>${certification.issuer}</p>
         </div>
-        <span class="year">${certification.year}</span>
-      </li>`,)
+        <span class="year">${certification.year} ↗</span>
+      </a>
+    </li>`,)
     .join("");
 }
