@@ -8,3 +8,14 @@
   --border: #eddbe6;
   --radius: 20px;
 }
+
+/* Tema escuro */
+body.dark {
+  --bg: #1d1522;
+  --card: #2a1f31;
+  --text: #f3e6f0;
+  --muted: #b9a3bf;
+  --primary: #d49bf0;
+  --glow: #f59cc4;
+  --border: #43334b;
+}

@@ -1,31 +1,60 @@
+// ===== Navegação =====
+
+import { $ } from "./render.js";
+
 export function initNavigation() {
+  const nav = $("nav");
+  const menuToggle = $("menuToggle");
+  const sections = [...document.querySelectorAll(".page")];
 
-  const links =
-    document.querySelectorAll(
-      'a[href^="#"]'
-    );
+  // Navegação por âncoras
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const id = link.getAttribute("href").slice(1);
+      const target = $(id);
 
-  links.forEach(link => {
+      if (!target) return;
 
-    link.addEventListener(
-      "click",
-      event => {
+      e.preventDefault();
 
-        const target =
-          document.querySelector(
-            link.getAttribute("href")
-          );
+      history.replaceState(null, "", "#" + id);
 
-        if (!target) return;
+      target.scrollIntoView({ behavior: "smooth" });
 
-        event.preventDefault();
-
-        target.scrollIntoView({
-          behavior: "smooth"
-        });
-      }
-    );
-
+      nav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
   });
 
+  // Destaca no menu a seção visível
+  function highlightNav() {
+    const pos = window.scrollY + 120;
+    let current = sections[0]?.id;
+
+    sections.forEach((section) => {
+      if (section.offsetTop <= pos) {
+        current = section.id;
+      }
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.classList.toggle(
+        "active",
+        link.getAttribute("href") === "#" + current,
+      );
+    });
+  }
+
+  window.addEventListener("scroll", highlightNav, {
+    passive: true,
+  });
+
+  highlightNav();
+
+  // Menu responsivo
+  menuToggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(open));
+  });
 }

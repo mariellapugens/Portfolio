@@ -1,66 +1,108 @@
+// ===== Renderização =====
+
 import {
   facts,
-  challanges,
-  stack, 
-  certifications
+  hobbies,
+  education,
+  languages,
+  certifications,
+  projects,
+  stack,
 } from "./data.js";
 
-export function renderFacts() {
+const renderLinks = (links = []) => {
+  if (!links.length) return "";
 
-  const element =
-    document.getElementById("facts");
+  return `
+    <div class="project-links">
+      ${links
+        .map(
+          ({ label, url }) => `
+            <a
+              href="${url}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              ${label}
+            </a>
+            -
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+};
 
-  element.innerHTML = facts
-    .map(item => `
+// Seleciona elementos pelo ID
+export const $ = (id) => document.getElementById(id);
+
+// Gera itens de lista
+const tag = (text) => `<li>${text}</li>`;
+
+// Renderiza informações pessoais
+$("facts").innerHTML = facts
+  .map((f) => `<li><strong>${f.label}</strong>${f.value}</li>`)
+  .join("");
+
+// Renderiza listas simples
+$("hobbies").innerHTML = hobbies.map(tag).join("");
+$("languages").innerHTML = languages.map(tag).join("");
+$("stack").innerHTML = stack.map(tag).join("");
+
+// Renderiza formação acadêmica
+$("education").innerHTML = education
+  .map(
+    (e) => `
       <li>
-        <strong>${item.label}</strong>
-        ${item.value}
+        <div class="row">
+          <h3>${e.name}</h3>
+          <span class="year">${e.year}</span>
+        </div>
+        <p>${e.place}</p>
       </li>
-    `)
-    .join("");
-}
-
-export function renderChallenges() {
-
-  const element =
-    document.getElementById("challenges");
-
-  element.innerHTML = challanges
-     .map(
-    (p) => `<li>
-      <div class="row"><h3>${p.challange}</h3></div>
-      <p>${p.desc}</p>
-      <span class="tech">${p.stack.join(" · ")}</span>
-    </li>`,
+    `,
   )
   .join("");
-}
 
-export function renderStack() {
+// Renderiza certificações
+$("certifications").innerHTML = certifications
+  .map(
+    (c) => `
+      <li>
+        <a
+          class="certification-link"
+          href="${c.url}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="certification-mark">✦</div>
+          <div>
+            <h3>${c.name}</h3>
+            <p>${c.issuer}</p>
+          </div>
+          <span class="year">${c.year} ↗</span>
+        </a>
+      </li>
+    `,
+  )
+  .join("");
 
-  const element =
-    document.getElementById("stack");
-
-  element.innerHTML = stack
-    .map(item => `<li>${item}</li>`)
-    .join("");
-}
-
-export function renderCertifications() {
-    
-  const element =
-    document.getElementById("certifications");
-
-  element.innerHTML = certifications
-    .map((certification) => `<li>
-  <a class="certification-link" href="${certification.url}" target="_blank" rel="noopener noreferrer" aria-label="Abrir certificação: ${certification.name}">
-        <div class="certification-mark">✦</div>
-        <div>
-          <h3>${certification.name}</h3>
-          <p>${certification.issuer}</p>
-        </div>
-        <span class="year">${certification.year} ↗</span>
-      </a>
-    </li>`,)
-    .join("");
-}
+// Renderiza projetos
+$("projects").innerHTML = projects
+  .map((p) => {
+    const title = p.nda
+      ? `<h3>${p.name}<span class="nda-badge" title="Projeto sob acordo de confidencialidade">🔒 NDA</span></h3>`
+      : `<h3>${p.name} </h3>`;
+    const link = p.nda
+      ? `<p class="nda-note">🔒 Projeto sob acordo de confidencialidade (NDA). Detalhes disponíveis apenas em conversa.</p>`
+      : ``;
+    return `<li>
+    <div class="row">${title}</div>
+    <p>${p.desc}</p>
+    <span class="tech">${p.stack.join(" · ")}</span>
+   ${link}
+   ${renderLinks(p.links)}
+  </li>`;
+  })
+  .join("");

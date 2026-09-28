@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -16,67 +16,156 @@
   <body>
     <header class="topbar">
       <span class="logo">mariella.dev</span>
-      <nav>
-        <a href="#projetos">Projetos</a>
-        <a href="#certificacoes">Certificações</a>
-        <a href="#curriculo">Currículo</a>
-        <a href="mailto:mariellapugens@gmail.com">Contato</a>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav id="nav">
+        <a href="#sobre" class="active">Sobre mim</a>
+        <a href="#formacao">Formação</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
       </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+        🌙
+      </button>
     </header>
 
     <main>
-      <section class="hero">
-         <div class="hero-copy">
-            <p class="eyebrow">Front End Developer · Porto Alegre</p>
-            <h1>Mariella Pugens<span>Construindo produtos.
-            Desenvolvendo pessoas.</span></h1>
-          <p class="lead">
-          Frontend, IA e mentoria em uma jornada contínua de evolução.
-          </p>
-          <a class="btn" href="mailto:mariellapugens@gmail.com">Vamos conversar →</a>
+      <!-- SOBRE MIM -->
+      <section id="sobre" class="page">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Sobre mim</p>
+            <div class="current-role">
+              <strong>Desenvolvedora Front End</strong>
+              <span>Instituto de Pesquisas Eldorado · 2023 — atual</span>
+            </div>
+            <h1>
+              Mariella Pugens
+              <span> Construindo produtos. Desenvolvendo pessoas. </span>
+            </h1>
+            <p class="lead">
+              Frontend, IA e mentoria em uma jornada contínua de evolução.
+            </p>
+            <a class="btn" href="#contato" data-nav>Vamos conversar →</a>
           </div>
-             <div class="avatar-frame">
-            <img src="assets/images/mariella_avatar.png" alt="Avatar ilustrado de Rafael Duarte" width="360" height="360" />
+          <div class="avatar-frame">
+            <img
+              src="assets/images/mariella_avatar.png"
+              alt="Avatar ilustrado de Rafael Duarte"
+              width="360"
+              height="360"
+            />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h2>Informações pessoais</h2>
+            <ul class="facts" id="facts"></ul>
+          </div>
+          <div class="card">
+            <h2>Hobbies</h2>
+            <ul class="tags" id="hobbies"></ul>
+          </div>
+        </div>
+        <div class="card cv">
+          <div>
+            <h2>Currículo</h2>
+            <p class="lead">
+              Resumo profissional em uma página, pronto para enviar ao
+              recrutamento.
+            </p>
+            <a class="btn" href="assets/curriculum_mariella.pdf" download
+              >⬇ Baixar currículo (PDF)</a
+            >
+            <p class="tiny">PDF · 1 página · atualizado em agosto de 2026</p>
+          </div>
         </div>
       </section>
 
-      <section class="stats">
-        <div class="card"><strong>3+</strong><span>anos de experiência</span></div>
-      </section>
-
-      <section id="curriculo" class="card cv">
-        <div>
-          <h2>Currículo</h2>
-          <p class="lead">Resumo profissional em uma página, pronto para enviar ao recrutamento.</p>
-          <a class="btn" href="assets/curriculum_mariella.pdf" download>⬇ Baixar currículo (PDF)</a>
-          <p class="tiny">PDF · 1 página · atualizado em agosto de 2026</p>
+      <!-- FORMAÇÃO -->
+      <section id="formacao" class="page">
+        <div class="card">
+          <h2>Formação educacional</h2>
+          <ul class="list" id="education"></ul>
         </div>
-        <ul class="facts" id="facts"></ul>
+        <div class="card">
+          <h2>Certificações</h2>
+          <ul class="certifications" id="certifications"></ul>
+        </div>
+        <div class="card">
+          <h2>Idiomas</h2>
+          <ul class="tags" id="languages"></ul>
+        </div>
       </section>
 
-      <section id="projetos" class="card">
-        <h2>Desafios que Já Resolvi</h2>
-        <ul class="projects" id="challenges"> <script type="module" src="js/main.js">renderChallenges();</script></ul>
+      <section id="portfolio" class="page">
+        <div class="card">
+          <h2>Trabalhos realizados</h2>
+          <ul class="projects" id="projects"></ul>
+        </div>
+        <div class="card">
+          <h2>Stack</h2>
+          <ul class="tags" id="stack"></ul>
+        </div>
       </section>
-           
-      <section class="card" id="certificacoes">
-        <h2>Certificações</h2>
-        <ul class="certifications" id="certifications"></ul>
-      </section>
+      <!-- CONTATO -->
+      <section id="contato" class="page">
+        <div class="card">
+          <h2>Contato</h2>
+          <p class="lead">Envie uma mensagem — respondo em breve.</p>
+          <form id="contactForm" novalidate>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" maxlength="100" />
+            <small class="error" id="erro-nome"></small>
 
-      <section class="card">
-        <h2>Stack</h2>
-        <ul class="tags" id="stack"></ul>
-      </section>
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              maxlength="255"
+              placeholder="usuario@dominio.com"
+            />
+            <small class="error" id="erro-email"></small>
 
-      <section class="card cta">
-        <h2>Em constante evolução profissional.</h2>
-        <a href="https://www.linkedin.com/in/mariellapugens/" target="_blank" rel="noopener noreferrer"> Vamos trocar ideias → </a>
+            <label for="mensagem">Mensagem</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              maxlength="1000"
+            ></textarea>
+            <small class="error" id="erro-mensagem"></small>
+
+            <button type="submit" class="btn">Enviar mensagem</button>
+          </form>
+        </div>
       </section>
     </main>
 
-    <footer>© 2026 Mariella Pugens</footer>
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      hidden
+    >
+      <div class="modal-box">
+        <h3 id="modalTitle">✦</h3>
+        <p id="modalText"></p>
+        <button class="btn" id="modalClose">Fechar</button>
+      </div>
+    </div>
 
-   
+    <footer>© 2026 Mariella Pugens</footer>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
