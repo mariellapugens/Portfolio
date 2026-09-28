@@ -1,4 +1,4 @@
-import { calculateAge } from "/assets/utils/calculateAge.js";
+import { calculateAge } from "../assets/utils/calculateAge.js";
 export const personalInfo = {
   birthDate: "1999-08-21", // coloque sua data real
 };
@@ -30,13 +30,13 @@ export const languages = ["Português · nativo", "Inglês · avançado"];
 export const projects = [
   {
     name: "Modernização de Sistemas Corporativos - Dell Technologies",
-    desc: "Modernização de interfaces internas com Angular, TypeScript e Material UI, com foco em usabilidade, acessibilidade e responsividade. Criação de mais de 14 componentes reutilizáveis. Refatoração de sistemas legados utilizando o Dell Design System para padronização das interfaces.",
+    desc: "Modernização de interfaces internas com Angular, TypeScript e Material UI, com foco em usabilidade, acessibilidade e responsividade. Criação de mais de 14 componentes reutilizáveis[...]
     stack: ["Angular", "TypeScript", "Material UI", "Dell Design System"],
     nda: true,
   },
   {
     name: "Desenvolvimento Full Stack — Drumwave",
-    desc: "Atuação no desenvolvimento full stack do projeto da Drumwave, utilizando React, Tailwind, PrimeReact, Context API, NestJS e Axios. Contribuição para a entrega de um portal de dados escalável, com foco em alta performance, usabilidade e experiência do usuário.",
+    desc: "Atuação no desenvolvimento full stack do projeto da Drumwave, utilizando React, Tailwind, PrimeReact, Context API, NestJS e Axios. Contribuição para a entrega de um portal de dados [...]
     stack: [
       "NestJS",
       "Prisma",
@@ -50,13 +50,13 @@ export const projects = [
   },
   {
     name: "Frontend para Soluções com Agentes de IA - Dell Technologies",
-    desc: "Desenvolvimento de frontend para uma solução baseada em agentes de inteligência artificial, criando a interface de interação entre usuários e agentes e integrando os fluxos conversacionais à aplicação.",
+    desc: "Desenvolvimento de frontend para uma solução baseada em agentes de inteligência artificial, criando a interface de interação entre usuários e agentes e integrando os fluxos conver[...]
     stack: ["React", "IA Generativa", "TypeScript"],
     nda: true,
   },
   {
     name: "Mentoria e Desenvolvimento de Pessoas",
-    desc: "Atuação como mentora nos programas de estágio de verão e de inverno, apoiando o desenvolvimento técnico e profissional de estudantes e profissionais em início de carreira. Participação voluntária em palestras e iniciativas internas de compartilhamento de conhecimento, promovendo o aprendizado e a disseminação de boas práticas de desenvolvimento.",
+    desc: "Atuação como mentora nos programas de estágio de verão e de inverno, apoiando o desenvolvimento técnico e profissional de estudantes e profissionais em início de carreira. Partici[...]
     stack: [
       "Mentoria",
       "Liderança Técnica",
@@ -67,11 +67,11 @@ export const projects = [
     links: [
       {
         label: "Estágio de verão",
-        url: "https://www.linkedin.com/posts/instituto-de-pesquisas-eldorado_est%C3%A1gio-de-ver%C3%A3o-2026-activity-7415452655004811264-BD20?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC-iwgEBpRbRKy43tdVe_77mSbVXHZyUMeM",
+        url: "https://www.linkedin.com/posts/instituto-de-pesquisas-eldorado_est%C3%A1gio-de-ver%C3%A3o-2026-activity-7415452655004811264-BD20?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC[...]
       },
       {
         label: "Elas no Eld",
-        url: "https://www.linkedin.com/posts/instituto-de-pesquisas-eldorado_5%C2%AA-edi%C3%A7%C3%A3o-elas-no-eld-activity-7491226094424154112-8YDS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC-iwgEBpRbRKy43tdVe_77mSbVXHZyUMeM",
+        url: "https://www.linkedin.com/posts/instituto-de-pesquisas-eldorado_5%C2%AA-edi%C3%A7%C3%A3o-elas-no-eld-activity-7491226094424154112-8YDS?utm_source=share&utm_medium=member_desktop&rcm=A[...]
       },
       {
         label: "Palestras",
