@@ -41,6 +41,29 @@ form .btn {
 .menu-toggle {
   display: none;
 }
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+    order: 2;
+  }
+  .theme-toggle {
+    order: 1;
+    margin-left: auto;
+  }
+  .topbar nav {
+    order: 3;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 8px;
+  }
+  .topbar nav.open {
+    display: flex;
+  }
+}
 
 /* Cards */
 .card {
