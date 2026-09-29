@@ -91,11 +91,29 @@ $("certifications").innerHTML = certifications
 // Renderiza projetos
 $("projects").innerHTML = projects
   .map((p) => {
+    const isDark = document.body.classList.contains("dark");
     const title = p.nda
-      ? `<h3>${p.name}<span class="nda-badge" title="Projeto sob acordo de confidencialidade">🔒 NDA</span></h3>`
+      ? `  <h3>
+      ${p.name}
+      <span
+        class="nda-badge themeToggleLock"
+        title="Projeto sob acordo de confidencialidade"
+      >
+        <img
+          src="assets/images/${isDark ? "lock.svg" : "lock-light.svg"}"
+          alt=""
+          aria-hidden="true"
+        />
+        NDA
+      </span>
+    </h3>`
       : `<h3>${p.name} </h3>`;
     const link = p.nda
-      ? `<p class="nda-note">🔒 Projeto sob acordo de confidencialidade (NDA). Detalhes disponíveis apenas em conversa.</p>`
+      ? `<p class="nda-note"><img
+          src="assets/images/${isDark ? "lock.svg" : "lock-light.svg"}"
+          alt=""
+          aria-hidden="true"
+        /> Projeto sob acordo de confidencialidade (NDA). Detalhes disponíveis apenas em conversa.</p>`
       : ``;
     return `<li>
     <div class="row">${title}</div>

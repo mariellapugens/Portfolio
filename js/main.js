@@ -10,9 +10,22 @@ initNavigation();
 const themeToggle = $("themeToggle");
 
 function applyTheme(theme) {
-  document.body.classList.toggle("dark", theme === "dark");
+  const isDark = theme === "dark";
 
-  themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  document.body.classList.toggle("dark", isDark);
+
+  themeToggle.innerHTML = `
+    <img
+      src="assets/images/${isDark ? "sun" : "moon"}.svg"
+      alt=""
+      aria-hidden="true"
+    />
+  `;
+
+  themeToggle.setAttribute(
+    "aria-label",
+    isDark ? "Ativar tema claro" : "Ativar tema escuro",
+  );
 }
 
 applyTheme(localStorage.getItem("tema") || "light");

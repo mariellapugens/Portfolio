@@ -10,7 +10,8 @@ export const facts = [
   { label: "Cargo", value: "Desenvolvedora Front-end" },
   {
     label: "Foco",
-    value: "Experiencia do usuario e arquitetura e mentoria de talentos",
+    value:
+      "Experiência do usuário, arquitetura de software e desenvolvimento de talentos.",
   },
   { label: "Idade", value: `${calculateAge(personalInfo.birthDate)} anos` },
 ];
