@@ -26,6 +26,7 @@ form .btn {
   justify-self: start;
 }
 
+/* Botão do menu e botão do tema. */
 .menu-toggle,
 .theme-toggle {
   background: var(--card);
@@ -39,15 +40,23 @@ form .btn {
 .menu-toggle {
   display: none;
 }
+
+/* Menu Responsivo. */
+/* Essas regras serão aplicadas quando a tela tiver no máximo 700px de largura. */
 @media (max-width: 700px) {
+  /* Mostra o botão do menu em telas pequenas. */
   .menu-toggle {
     display: block;
     order: 2;
   }
+
+  /* Configuração do botão de tema no celular. */
   .theme-toggle {
     order: 1;
     margin-left: auto;
   }
+
+  /* Configuração da navegação em telas pequenas. */
   .topbar nav {
     order: 3;
     display: none;
@@ -58,6 +67,8 @@ form .btn {
     border-radius: 14px;
     padding: 8px;
   }
+
+  /* Quando o elemento <nav> possui a classe "open", o menu volta a ser exibido. */
   .topbar nav.open {
     display: flex;
   }
@@ -75,6 +86,7 @@ form .btn {
     border-color 0.3s ease;
 }
 
+/* Quando o mouse passa sobre o card. */
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--glow);
@@ -90,6 +102,7 @@ form .btn {
   color: var(--primary);
 }
 
+/* Área que contém informações sobre o cargo atual. */
 .current-role {
   display: flex;
   flex-wrap: wrap;
@@ -109,6 +122,7 @@ form .btn {
   font-size: 12px;
 }
 
+/* Destaque do H1. */
 h1 span {
   display: block;
   background: linear-gradient(120deg, var(--primary), var(--glow));
@@ -117,12 +131,14 @@ h1 span {
   color: transparent;
 }
 
+/* Texto principal. */
 .lead {
   color: var(--muted);
   max-width: 52ch;
   margin-top: 14px;
 }
 
+/* Texto pequeno auxiliar. */
 .tiny {
   font-size: 11px;
   color: var(--muted);
@@ -141,12 +157,14 @@ h1 span {
   color: transparent;
 }
 
+/* Texto descritivo da estatística. */
 .stats span {
   color: var(--muted);
   font-size: 14px;
 }
 
 /* Currículo */
+/* Altera especificamente o <h2> dentro de .cv. */
 .cv h2 {
   margin-bottom: 8px;
 }
@@ -156,9 +174,12 @@ h1 span {
   list-style: none;
   display: grid;
   gap: 12px;
+  /* Cria colunas automaticamente. Cada coluna terá no mínimo 200px.
+  Se houver espaço, novas colunas são criadas. */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+/* Cada item da lista de fatos. */
 .facts li {
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -166,6 +187,7 @@ h1 span {
   background: #fdf7fb;
 }
 
+/* Título de cada fato. */
 .facts strong {
   display: block;
   font-size: 11px;
@@ -268,6 +290,7 @@ h1 span {
     box-shadow 0.2s ease;
 }
 
+/* Efeito ao passar o mouse. */
 .certifications li:hover {
   border-color: var(--glow);
   transform: translateY(-2px);
@@ -284,6 +307,7 @@ h1 span {
   text-decoration: none;
 }
 
+/* Ícone da certificação. */
 .certification-mark {
   display: grid;
   place-items: center;
@@ -312,11 +336,12 @@ h1 span {
   white-space: nowrap;
 }
 
+/* Quando o mouse passa pela certificação, o ano muda para a cor principal. */
 .certifications li:hover .year {
   color: var(--primary);
 }
 
-/* ===== Aviso de NDA ===== */
+/* Aviso de NDA */
 .nda-badge {
   display: inline-flex;
   align-items: center;
@@ -334,14 +359,19 @@ h1 span {
   vertical-align: middle;
 }
 
+/* Ícone dentro do badge NDA. */
 .nda-badge img {
   font-size: 11px;
   width: 12px;
   height: 12px;
 }
+
+/* Quando o tema é escuro, muda a cor de fundo do badge. */
 body.dark .nda-badge {
   background: #33263a;
 }
+
+/* Aviso de confidencialidade. */
 .nda-note {
   margin-top: 12px;
   padding: 10px 14px;
@@ -352,6 +382,7 @@ body.dark .nda-badge {
   font-size: 13px;
 }
 
+/* Ícone de cadeado dentro do aviso. */
 .nda-note img {
   width: 16px;
   height: 16px;
@@ -359,6 +390,7 @@ body.dark .nda-badge {
   margin-right: 4px;
 }
 
+/* Fundo do aviso quando o tema é escuro. */
 body.dark .nda-note {
   background: #2e2234;
 }
@@ -396,11 +428,13 @@ body.dark .nda-note {
   font-size: 14px;
 }
 
+/* Ao passar o mouse no link Adiciona o sublinhado. */
 .cta a:hover {
   text-decoration: underline;
 }
 
 /* Formulário */
+/* Classe adicionada aos campos que possuem erro. */
 .invalid {
   border-color: #d9466f;
 }
@@ -413,6 +447,7 @@ body.dark .nda-note {
 
 /* Modal */
 .modal {
+  /* Faz o modal ficar fixo na tela, independente da posição de rolagem. */
   position: fixed;
   inset: 0;
   background: rgba(30, 15, 35, 0.5);
@@ -422,10 +457,12 @@ body.dark .nda-note {
   z-index: 50;
 }
 
+/* Quando o modal possui o atributo hidden, ele fica completamente escondido. */
 .modal[hidden] {
   display: none;
 }
 
+/* Caixa que aparece dentro do modal. */
 .modal-box {
   background: var(--card);
   color: var(--text);
@@ -447,6 +484,7 @@ body.dark .nda-note {
 }
 
 /* Tema escuro */
+/* Quando o <body> possui a classe "dark", altera o fundo da seção hero. */
 body.dark .hero {
   background: linear-gradient(130deg, #3a2240, #2b2342);
 }

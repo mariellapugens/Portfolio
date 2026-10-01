@@ -1,4 +1,4 @@
-/* Topbar */
+/* Topbar - barra superior */
 .topbar {
   max-width: 1000px;
   margin: 0 auto 28px;
@@ -9,6 +9,7 @@
   flex-wrap: wrap;
 }
 
+/* Links da navegação */
 .topbar nav {
   display: flex;
   gap: 4px;
@@ -52,6 +53,7 @@ main {
   margin-top: 32px;
 }
 
+/* Grid de duas colunas */
 .grid-2 {
   display: grid;
   gap: 16px;
@@ -70,6 +72,7 @@ main {
   padding: 32px 28px 24px;
 }
 
+/* Avatar */
 .avatar-frame {
   display: grid;
   place-items: end center;
@@ -109,7 +112,7 @@ main {
   justify-content: space-between;
 }
 
-/* Responsividade */
+/* Responsividade: Telas com até 620px */
 @media (max-width: 620px) {
   .hero {
     grid-template-columns: 1fr;
@@ -123,12 +126,14 @@ main {
   }
 }
 
+/* Responsividade: Telas com pelo menos 860px */
 @media (min-width: 860px) {
   .cv {
     grid-template-columns: 1fr 1.2fr;
   }
 }
 
+/* Menu em telas pequenas */
 @media (max-width: 700px) {
   .menu-toggle {
     display: block;

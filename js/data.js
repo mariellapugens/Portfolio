@@ -1,7 +1,11 @@
 import { calculateAge } from "../assets/utils/calculateAge.js";
+
+// Data de nascimento.
 export const personalInfo = {
-  birthDate: "1999-08-21", // coloque sua data real
+  birthDate: "1999-08-21",
 };
+
+// Fatos sobre mim.
 export const facts = [
   {
     label: "Local",
@@ -16,8 +20,10 @@ export const facts = [
   { label: "Idade", value: `${calculateAge(personalInfo.birthDate)} anos` },
 ];
 
+// Hobbies.
 export const hobbies = ["Leitura", "Pets", "Música", "Jiu-jitsu"];
 
+// Formação.
 export const education = [
   {
     name: "Análise e Desenvolvimento de Sistemas",
@@ -28,6 +34,7 @@ export const education = [
 
 export const languages = ["Português · nativo", "Inglês · avançado"];
 
+// Projetos que já atuei na área.
 export const projects = [
   {
     name: "Modernização de Sistemas Corporativos - Dell Technologies",
@@ -84,6 +91,7 @@ export const projects = [
   },
 ];
 
+// Tecnologias que trabalho.
 export const stack = [
   "JavaScript",
   "React",
@@ -95,6 +103,7 @@ export const stack = [
   "Git",
 ];
 
+// Certificações.
 export const certifications = [
   {
     name: "Certificado oficial EF SET 57/100 (B2 Upper Intermediate)",

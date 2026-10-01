@@ -1,43 +1,65 @@
-# Simple workflow for deploying static content to GitHub Pages
+## Nome do workflow que aparecerá na aba "Actions" do GitHub
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Executa automaticamente quando houver um push na branch "master"
   push:
     branches: ["master"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Permite executar o workflow manualmente pela aba "Actions" do GitHub
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Permissões
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Controle de execuções simultâneas
 concurrency:
+  # Define um grupo para os deploys do Pages
   group: "pages"
+
+  # Não cancela um deploy que já começou
   cancel-in-progress: false
 
+  # Jobs
 jobs:
-  # Single deploy job since we're just deploying
+  # Job responsável pelo deploy
   deploy:
+    # Ambiente utilizado pelo GitHub Pages
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+
+      # Depois que o deploy terminar,
+      # o GitHub fornece a URL da página
+      url:
+        ${{ steps.deployment.outputs.page_url }}
+
+        # Máquina virtual onde o workflow será executado
+    runs-on:
+      ubuntu-latest
+
+      # Etapas do deploy
     steps:
+      # 1. Baixa o conteúdo do repositório
       - name: Checkout
         uses: actions/checkout@v4
+
+      # 2. Configura o ambiente do GitHub Pages
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses:
+          actions/configure-pages@v5
+
+          # 3. Cria o artefato que será publicado
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Envia todo o conteúdo do repositório
+          path:
+            "."
+
+            # 4. Publica o artefato no GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5

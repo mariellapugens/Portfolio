@@ -1,13 +1,20 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <!-- Configurações e informações da página -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título exibido na aba do navegador -->
     <title>Mariella Pugens — Desenvolvedora Front End</title>
+
+    <!-- Descrição usada por mecanismos de busca e compartilhamentos -->
     <meta
       name="description"
       content="Portfólio de Mariella Pugens, desenvolvedor full stack: projetos, dados profissionais e currículo em PDF."
     />
+
+    <!-- Arquivos CSS -->
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/layout.css" />
@@ -15,7 +22,10 @@
   </head>
   <body>
     <header class="topbar">
+      <!-- nome do site -->
       <span class="logo">mariella.dev</span>
+
+      <!-- Botão que aparece no menu mobile -->
       <button
         class="menu-toggle"
         id="menuToggle"
@@ -24,12 +34,16 @@
       >
         ☰
       </button>
+
+      <!-- Menu principal -->
       <nav id="nav">
         <a href="#sobre" class="active">Sobre mim</a>
         <a href="#formacao">Formação</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#contato">Contato</a>
       </nav>
+
+      <!-- Botão para alternar entre tema claro e escuro -->
       <button
         class="theme-toggle"
         id="themeToggle"
@@ -38,7 +52,7 @@
     </header>
 
     <main>
-      <!-- SOBRE MIM -->
+      <!-- Sobre mim -->
       <section id="sobre" class="page">
         <div class="hero">
           <div class="hero-copy">
@@ -56,6 +70,8 @@
             </p>
             <a class="btn" href="#contato" data-nav>Vamos conversar →</a>
           </div>
+
+          <!-- avatar -->
           <div class="avatar-frame">
             <img
               src="assets/images/mariella_avatar.png"
@@ -66,6 +82,7 @@
           </div>
         </div>
 
+        <!-- Informações pessoais + hobbies -->
         <div class="grid-2">
           <div class="card">
             <h2>Informações pessoais</h2>
@@ -76,6 +93,8 @@
             <ul class="tags" id="hobbies"></ul>
           </div>
         </div>
+
+        <!-- Currículo -->
         <div class="card cv">
           <div>
             <h2>Currículo</h2>
@@ -83,6 +102,8 @@
               Resumo profissional em uma página, pronto para enviar ao
               recrutamento.
             </p>
+
+            <!-- Download do currículo -->
             <a class="btn" href="assets/curriculum_mariella.pdf" download
               >⬇ Baixar currículo (PDF)</a
             >
@@ -91,7 +112,7 @@
         </div>
       </section>
 
-      <!-- FORMAÇÃO -->
+      <!-- Formação -->
       <section id="formacao" class="page">
         <div class="card">
           <h2>Formação educacional</h2>
@@ -107,6 +128,7 @@
         </div>
       </section>
 
+      <!-- PORTFÓLIO -->
       <section id="portfolio" class="page">
         <div class="card">
           <h2>Trabalhos realizados</h2>
@@ -117,6 +139,7 @@
           <ul class="tags" id="stack"></ul>
         </div>
       </section>
+
       <!-- CONTATO -->
       <section id="contato" class="page">
         <div class="card">
@@ -152,6 +175,7 @@
       </section>
     </main>
 
+    <!-- MODAL -->
     <div
       class="modal"
       id="modal"
@@ -167,7 +191,12 @@
       </div>
     </div>
 
+    <!-- Rodapé -->
     <footer>© 2026 Mariella Pugens</footer>
+
+    <!--
+      Carrega o JavaScript principal. type="module" permite utilizar import/export entre os arquivos JS.
+    -->
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
